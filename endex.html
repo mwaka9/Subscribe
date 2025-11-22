@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>أفضل القنوات التعليمية</title>
+
+<!-- خط جميل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Cairo', sans-serif;
+        background: linear-gradient(135deg, #ff9eb5, #ffd6e7, #c7e9ff, #a3ffd6);
+        background-size: 300% 300%;
+        animation: grad 12s infinite alternate;
+        text-align: center;
+        color: #222;
+    }
+
+    @keyframes grad {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 100% 100%; }
+    }
+
+    .container {
+        max-width: 650px;
+        margin: 40px auto;
+        padding: 25px;
+        background: rgba(255,255,255,0.65);
+        border-radius: 30px;
+        box-shadow: 0 0 30px rgba(255,255,255,0.5);
+        border: 6px dashed rgba(255,255,255,0.7);
+        backdrop-filter: blur(6px);
+        animation: fade 1.2s ease-in-out;
+    }
+
+    @keyframes fade {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 32px;
+        color: #c4007a;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 26px;
+        color: #0055aa;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 20px;
+        color: #333;
+        line-height: 1.7;
+    }
+
+    .btn {
+        display: block;
+        margin: 15px 0;
+        padding: 15px;
+        border-radius: 18px;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.25s;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* زر الرجوع */
+    .back {
+        background: #ff75a0;
+        color: white;
+    }
+    .back:hover {
+        background: #ff8fb5;
+        transform: scale(1.07);
+    }
+
+    /* زر القنوات */
+    .btn1 {
+        background: #ffce00;
+        color: #000;
+    }
+    .btn1:hover {
+        background: #ffe680;
+    }
+
+    .btn2 {
+        background: #00c8ff;
+        color: #fff;
+    }
+    .btn2:hover {
+        background: #6ee7ff;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- الصفحة الرئيسية -->
+<div class="container" id="home">
+    <h1>من أجمل القنوات التعليمية 🎥✨</h1>
+
+    <a href="#wak" class="btn btn1">قناة جرافك WAK</a>
+    <a href="#koon" class="btn btn2">قناة كون محمود الرواحي</a>
+</div>
+
+<!-- قناة جرافك WAK -->
+<div class="container" id="wak" style="display:none;">
+    <h2>قناة جرافك WAK</h2>
+    <p><strong>المنشئ:</strong> وسام عبدالله الرواحي</p>
+    <p>
+        قناة إبداعية متخصصة في التصميم، المونتاج، تطوير المهارات،  
+        وتقديم محتوى تعليمي ممتع وسهل الفهم.  
+        تساعدك القناة على تعلم تصميم الصور والفيديوهات بطريقة احترافية وممتعة.
+    </p>
+
+    <a href="https://youtube.com/channel/UC_Kh7xNgTyqSxbgXNVodlTg?si=rMl_iVkluyQ-aVzv" 
+       class="btn btn1" target="_blank">
+       اضغط هنا للذهاب إلى قناة جرافك WAK
+    </a>
+
+    <a href="#home" class="back">↩ الرجوع</a>
+</div>
+
+<!-- قناة كون محمود الرواحي -->
+<div class="container" id="koon" style="display:none;">
+    <h2>قناة كون محمود الرواحي</h2>
+    <p><strong>المنشئ:</strong> كون محمد الرواحي</p>
+    <p>
+        قناة مميزة تقدم محتوى هادف، ممتع، ومفيد لجميع الأعمار.  
+        ستجد فيها إبداع، أفكار جديدة، ومحتوى يفتح لك آفاقًا واسعة للتعلم والمتعة.
+    </p>
+
+    <a href="https://youtube.com/channel/UCwjlHj-XOFRvaaGG_N2aHNQ?si=7QIU-9mYDX7EB76l"
+       class="btn btn2" target="_blank">
+       اضغط هنا للذهاب إلى قناة كون محمود الرواحي
+    </a>
+
+    <a href="#home" class="back">↩ الرجوع</a>
+</div>
+
+<script>
+    // إظهار الصفحات
+    function showPage(id) {
+        document.querySelectorAll('.container').forEach(sec => sec.style.display = "none");
+        document.getElementById(id).style.display = "block";
+    }
+
+    // تشغيل التبديل تلقائي عند الضغط على الأزرار
+    document.querySelectorAll("a[href^='#']").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const target = this.getAttribute("href").replace("#", "");
+            if (target === "home") {
+                showPage("home");
+            } else if (target === "wak") {
+                showPage("wak");
+            } else if (target === "koon") {
+                showPage("koon");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
